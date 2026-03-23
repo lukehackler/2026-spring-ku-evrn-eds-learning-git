@@ -109,7 +109,7 @@ Need to demonstrate the use of the `mutate()` function, and then how to use `ggp
 konza_data %>%
   filter(!is.na(nlcdClass)) %>%
   filter(percentCover < 30) %>%
-  filter(nlcdClass == "grasslandHerbaceous" | nlcdClass == "deciduousForest")%>%
+  filter(nlcdClass == "grasslandHerbaceous" | nlcdClass == "deciduousForest") %>%
   ggplot(aes(x = elevation,
              y = percentCover,
              col = nlcdClass)) +
