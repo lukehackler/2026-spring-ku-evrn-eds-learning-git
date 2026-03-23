@@ -85,15 +85,17 @@ Next up, we'll use `ggplot2` to make some figures!
 
 konza_data %>%
   filter(!is.na(family)) %>%
-  filter(family == "Asteraceae" | family == "Poaceae") %>%
+  filter(family == "Asteraceae") %>%
   ggplot(aes(x = elevation,
-             y = percentCover,
-             color = family)) +
-  geom_point() +
+             y = percentCover)) +
+  geom_point(aes(shape = plotID,
+                 color = plotID),
+             size = 3) +
   geom_smooth() +
   labs(title = "Comparison of Asteraceae and Poaceae by elevation",
        y = "Percent Cover",
-       x = "Elevation (m)")
+       x = "Elevation (m)") +
+  scale_color_manual(values = c("black", "dodgerblue", "blue", "red"))
 ```
 
 
@@ -101,21 +103,5 @@ konza_data %>%
 
 Need to demonstrate the use of the `mutate()` function, and then how to use `ggplot2`. Some interesting plots could be looking at the effect of elevation on plant cover.
 
-```{r}
-#| label: nlcdClass-by-elevation-and-percent-cover
-
-# Create a plot comparing nlcdClass to elevation using ggplot
-
-konza_data %>%
-  filter(!is.na(nlcdClass)) %>%
-  filter(percentCover < 30) %>%
-  filter(nlcdClass == "grasslandHerbaceous" | nlcdClass == "deciduousForest") %>%
-  ggplot(aes(x = elevation,
-             y = percentCover,
-             col = nlcdClass)) +
-  geom_point() +
-  geom_smooth() +
-  labs(title = "")
-```
 
 
