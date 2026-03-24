@@ -101,4 +101,26 @@ konza_data %>%
 Need to demonstrate the use of the `mutate()` function, and then how to use `ggplot2`. Some interesting plots could be looking at the effect of elevation on plant cover.
 
 
+## Graph 1
+
+I want to compare [blank] and [blank]
+
+```{r}
+#| label: prop-cover-and-elevation-plotid
+
+konza_data %>%
+  select(percentCover, elevation, plotID, family) %>%
+  mutate(propCover = percentCover / 100) %>%
+  group_by(plotID) %>%
+  ggplot() +
+  geom_boxplot(aes(x = plotID,
+                   y = propCover)) +
+
+  labs(title = "Plot ID and Prop Cover",
+       x = "Plot ID",
+       y = "Proportion Cover")
+  
+```
+
+
 
