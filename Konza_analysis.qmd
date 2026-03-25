@@ -100,9 +100,10 @@ konza_data %>%
 
 Need to demonstrate the use of the `mutate()` function, and then how to use `ggplot2`. Some interesting plots could be looking at the effect of elevation on plant cover.
 
+## Practicing Exploratory Data Analysis with NEON Plant Data
 
-## Graph 1: I want to use `geom_boxplot` to see how percent cover varies
-## between plot types (tower and distributed).
+Graph 1: I want to use `geom_boxplot` to see how percent cover varies
+between plot types (tower and distributed).
 
 ```{r}
 #| label: plot-type-and-percent-cover
