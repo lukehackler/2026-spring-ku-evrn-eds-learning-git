@@ -101,28 +101,8 @@ konza_data %>%
 Need to demonstrate the use of the `mutate()` function, and then how to use `ggplot2`. Some interesting plots could be looking at the effect of elevation on plant cover.
 
 
-## Graph 1
-
-I want to compare [blank] and [blank]
-
-```{r}
-#| label: prop-cover-and-elevation-plotid
-
-konza_data %>%
-  select(percentCover, elevation, plotID, family) %>%
-  mutate(propCover = percentCover / 100) %>%
-  group_by(plotID) %>%
-  ggplot() +
-  geom_boxplot(aes(x = plotID,
-                   y = propCover)) +
-
-  labs(title = "Plot ID and Prop Cover",
-       x = "Plot ID",
-       y = "Proportion Cover")
-  
-```
-
-## Graph 2: I want to see how percent cover changes across plot types (tower and distributed)
+## Graph 1: I want to see how percent cover varies between plot types 
+## (tower and distributed)
 
 ```{r}
 #| label: plot-type-and-percent-cover
@@ -132,16 +112,37 @@ konza_data %>%
   ggplot() +
   aes(x = plotType,
       y = percentCover) +
-  geom_boxplot()
+  geom_boxplot() +
   labs(title = "Percent Cover by Plot Type",
        x = "Plot Type",
        y = "Percent Cover")
 ```
 
-## Glad that the plot types are appropriately named,
-## Next I will try to filter in specific families
+## Glad that the plot types are appropriately named.
+
+## Graph 2: Next I will try to visualize the counts of Poaceae in
+## each 'nlcdClass'
 
 ```{r}
+#| label: asteraceae-count-by-nlcd-class
 
+konza_data %>%
+  filter(family == "Poaceae") %>%
+  ggplot() +
+  aes(x = nlcdClass,
+      fill = family) +
+  geom_bar() +
+  scale_fill_manual(values = c("forestgreen")) +
+  labs(title = "Poaceae per NLCD Class",
+       x = "NLCD Class",
+       y = "Poaceae Count")
 ```
+
+## I used the '?geom_bar' command to get help using `geom_bar`. The bar graph
+## showed that more Poaceae counts occurred in Grassland Herbaceous
+
+## Graph 3: For my final graph I want to make a graph using `geom_point`
+## and `geom_smooth`. I also want to use `mutate` to get the proportion
+## cover of specific families and compare them to their elevations
+
 
