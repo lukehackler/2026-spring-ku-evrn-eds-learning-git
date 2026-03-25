@@ -257,98 +257,14 @@ date  (1): endDate
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>konza_data <span class="sc">%&gt;%</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(family)) <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(family <span class="sc">==</span> <span class="st">"Asteraceae"</span> <span class="sc">|</span> family <span class="sc">==</span> <span class="st">"Poaceae"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elevation,</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentCover,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> family)) <span class="sc">+</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Asteraceae and Poaceae by elevation"</span>,</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percent Cover"</span>,</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Elevation (m)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: pseudoinverse used at 350.63</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: neighborhood radius 50.565</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: reciprocal condition number 3.2749e-16</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: There are other near singularities as well. 2486.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at
-350.63</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
-50.565</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : reciprocal condition
-number 3.2749e-16</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : There are other near
-singularities as well. 2486.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: pseudoinverse used at 424.37</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: neighborhood radius 49.865</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: reciprocal condition number 1.5923e-16</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: There are other near singularities as well. 712.89</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at
-424.37</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
-49.865</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : reciprocal condition
-number 1.5923e-16</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : There are other near
-singularities as well. 712.89</code></pre>
-</div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(family <span class="sc">==</span> <span class="st">"Asteraceae"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elevation,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">y =</span> percentCover,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">group =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Cover of Asteraceae by Elevation"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percent Cover"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Elevation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -361,70 +277,82 @@ singularities as well. 712.89</code></pre>
 <section id="next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
 <p>Need to demonstrate the use of the <code>mutate()</code> function, and then how to use <code>ggplot2</code>. Some interesting plots could be looking at the effect of elevation on plant cover.</p>
+</section>
+<section id="practicing-exploratory-data-analysis-with-neon-plant-data" class="level2">
+<h2 class="anchored" data-anchor-id="practicing-exploratory-data-analysis-with-neon-plant-data">Practicing Exploratory Data Analysis with NEON Plant Data</h2>
+<p>Graph 1: I want to use <code>geom_boxplot</code> to see how percent cover varies between plot types (tower and distributed).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a plot comparing nlcdClass to elevation using ggplot</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>konza_data <span class="sc">%&gt;%</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(nlcdClass)) <span class="sc">%&gt;%</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(percentCover <span class="sc">&lt;</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nlcdClass <span class="sc">==</span> <span class="st">"grasslandHerbaceous"</span> <span class="sc">|</span> nlcdClass <span class="sc">==</span> <span class="st">"deciduousForest"</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elevation,</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> percentCover,</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">col =</span> nlcdClass)) <span class="sc">+</span></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: pseudoinverse used at 374.25</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: neighborhood radius 49.748</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: reciprocal condition number 1.3501e-15</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in simpleLoess(y, x, w, span, degree = degree, parametric = parametric,
-: There are other near singularities as well. 2474.8</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : pseudoinverse used at
-374.25</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : neighborhood radius
-49.748</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : reciprocal condition
-number 1.3501e-15</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in predLoess(object$y, object$x, newx = if (is.null(newdata)) object$x
-else if (is.data.frame(newdata))
-as.matrix(model.frame(delete.response(terms(object)), : There are other near
-singularities as well. 2474.8</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>konza_data <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plotType <span class="sc">==</span> <span class="st">"tower"</span> <span class="sc">|</span> plotType <span class="sc">==</span> <span class="st">"distributed"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> plotType,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> percentCover) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percent Cover by Plot Type"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Plot Type"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percent Cover"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Konza_analysis_files/figure-html/nlcdClass-by-elevation-and-percent-cover-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Konza_analysis_files/figure-html/plot-type-and-percent-cover-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>The distributed plot type has far more outliers and creates a larger distribution of percent covers and the tower plot type is less distributed. I am glad that the plot types were named appropriately.</p>
+<p>Graph 2: Next I will try to visualize the counts of Poaceae in each ‘nlcdClass’ using <code>geom_bar</code> which I assume is for bar graphs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>konza_data <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(family <span class="sc">==</span> <span class="st">"Poaceae"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> nlcdClass,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> family) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"forestgreen"</span>)) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Poaceae per NLCD Class"</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"NLCD Class"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Poaceae Count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Konza_analysis_files/figure-html/asteraceae-count-by-nlcd-class-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>I used the ‘?geom_bar’ command to get help using <code>geom_bar</code>. The bar graph showed that more Poaceae counts occurred in Grassland Herbaceous. If there are any pointers for using <code>geom_bar</code> I would like to implement them because I found it difficult on my own.</p>
+<p>Graph 3: For my final graph I want to use <code>geom_point</code> and <code>geom_smooth</code>. I also want to use <code>mutate</code> to get the proportion cover of specific families and compare them to their elevations. I want to use <code>filter</code> to filter proportion cover below 0.15 and elevation above 380. Also add fun colors using <code>scale_color_manual</code>!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>konza_data <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(family, elevation, percentCover) <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">propCover =</span> percentCover <span class="sc">/</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(family <span class="sc">==</span> <span class="st">"Poaceae"</span> <span class="sc">|</span> family <span class="sc">==</span> <span class="st">"Asteraceae"</span> <span class="sc">|</span> family <span class="sc">==</span> <span class="st">"Cornaceae"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(propCover <span class="sc">&lt;</span> <span class="fl">0.15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(elevation <span class="sc">&gt;</span> <span class="dv">380</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> elevation,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> propCover,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> family) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Poaceae"</span> <span class="ot">=</span> <span class="st">"hotpink"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Asteraceae"</span> <span class="ot">=</span> <span class="st">"limegreen"</span>,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Cornaceae"</span> <span class="ot">=</span> <span class="st">"purple"</span>)) <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Proportion Cover of Poaceae, Asteraceae, and Cornaceae by Elevation"</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Elevation (m)"</span>,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Proportion Cover"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Konza_analysis_files/figure-html/prop-cover-poa-aster-corn-by-elevation-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This figure shows Poaceae declining in proportion cover as elevation increases, Asteraceae rising in proportion cover as elevation increases and Cornaceae holding a constant line supported by data points that seem to be evening eachother out.</p>
 </section>
 
 </main>
