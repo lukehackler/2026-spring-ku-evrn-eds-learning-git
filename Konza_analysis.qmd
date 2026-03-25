@@ -167,7 +167,7 @@ konza_data %>%
       y = propCover,
       color = family) +
   geom_point() +
-  geom_smooth() +
+  geom_smooth(method = "lm") +
   scale_color_manual(values = c("Poaceae" = "hotpink",
                                 "Asteraceae" = "limegreen",
                                 "Cornaceae" = "purple")) +
