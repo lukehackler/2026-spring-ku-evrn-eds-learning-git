@@ -101,8 +101,8 @@ konza_data %>%
 Need to demonstrate the use of the `mutate()` function, and then how to use `ggplot2`. Some interesting plots could be looking at the effect of elevation on plant cover.
 
 
-## Graph 1: I want to see how percent cover varies between plot types 
-## (tower and distributed)
+## Graph 1: I want to use `geom_boxplot` to see how percent cover varies
+## between plot types (tower and distributed).
 
 ```{r}
 #| label: plot-type-and-percent-cover
@@ -118,11 +118,13 @@ konza_data %>%
        y = "Percent Cover")
 ```
 
-## Glad that the plot types are appropriately named. The distributed plot type
-## shows 
+## The distributed plot type has far more outliers and creates a 
+## larger distribution of percent covers and the tower plot type
+## is less distributed. I am glad that the plot types were named
+## appropriately.
 
 ## Graph 2: Next I will try to visualize the counts of Poaceae in
-## each 'nlcdClass'
+## each 'nlcdClass' using `geom_bar` which I assume is for bar graphs.
 
 ```{r}
 #| label: asteraceae-count-by-nlcd-class
@@ -140,9 +142,11 @@ konza_data %>%
 ```
 
 ## I used the '?geom_bar' command to get help using `geom_bar`. The bar graph
-## showed that more Poaceae counts occurred in Grassland Herbaceous
+## showed that more Poaceae counts occurred in Grassland Herbaceous. If there
+## are any pointers for using `geom_bar` I would like to implement them
+## because I found it difficult on my own.
 
-## Graph 3: For my final graph I want to make a graph using `geom_point`
+## Graph 3: For my final graph I want to use `geom_point`
 ## and `geom_smooth`. I also want to use `mutate` to get the proportion
 ## cover of specific families and compare them to their elevations. I 
 ## want to use `filter` to filter proportion cover below 0.15 and elevation
