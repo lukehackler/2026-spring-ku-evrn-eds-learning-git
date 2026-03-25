@@ -122,5 +122,26 @@ konza_data %>%
   
 ```
 
+## Graph 2: I want to see how percent cover changes across plot types (tower and distributed)
 
+```{r}
+#| label: plot-type-and-percent-cover
+
+konza_data %>%
+  filter(plotType == "tower" | plotType == "distributed") %>%
+  ggplot() +
+  aes(x = plotType,
+      y = percentCover) +
+  geom_boxplot()
+  labs(title = "Percent Cover by Plot Type",
+       x = "Plot Type",
+       y = "Percent Cover")
+```
+
+## Glad that the plot types are appropriately named,
+## Next I will try to filter in specific families
+
+```{r}
+
+```
 
