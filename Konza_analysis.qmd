@@ -118,7 +118,8 @@ konza_data %>%
        y = "Percent Cover")
 ```
 
-## Glad that the plot types are appropriately named.
+## Glad that the plot types are appropriately named. The distributed plot type
+## shows 
 
 ## Graph 2: Next I will try to visualize the counts of Poaceae in
 ## each 'nlcdClass'
@@ -143,6 +144,34 @@ konza_data %>%
 
 ## Graph 3: For my final graph I want to make a graph using `geom_point`
 ## and `geom_smooth`. I also want to use `mutate` to get the proportion
-## cover of specific families and compare them to their elevations
+## cover of specific families and compare them to their elevations. I 
+## want to use `filter` to filter proportion cover below 0.15 and elevation
+## above 380. Also add fun colors using `scale_color_manual`!
 
+```{r}
+#| label: prop-cover-poa-aster-corn-by-elevation
 
+konza_data %>%
+  select(family, elevation, percentCover) %>%
+  mutate(propCover = percentCover / 100) %>%
+  filter(family == "Poaceae" | family == "Asteraceae" | family == "Cornaceae") %>%
+  filter(propCover < 0.15) %>%
+  filter(elevation > 380) %>%
+  ggplot() +
+  aes(x = elevation,
+      y = propCover,
+      color = family) +
+  geom_point() +
+  geom_smooth() +
+  scale_color_manual(values = c("Poaceae" = "hotpink",
+                                "Asteraceae" = "limegreen",
+                                "Cornaceae" = "purple")) +
+  labs(title = "Proportion Cover of Poaceae, Asteraceae, and Cornaceae by Elevation",
+       x = "Elevation (m)",
+       y = "Proportion Cover")
+```
+
+## This figure shows Poaceae declining in proportion cover as elevation
+## increases, Asteraceae rising in proportion cover as elevation increases
+## and Cornaceae holding a constant line supported by data points that
+## seem to be evening eachother out. 
